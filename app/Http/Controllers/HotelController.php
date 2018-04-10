@@ -15,21 +15,13 @@ class HotelController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'alamat' => 'required|string|max:255',
-            'fax' => 'required|string|max:255',
-            'email' => 'required|string|max:255',
-            'npwp' => 'required'
-        ]);
-
         Hotel::create([
             'name' => request('name'),
             'phone' => request('phone'),
             'fax' => request('fax'),
             'email' => request('email'),
-            'npwp' => request('npwp')
-            
+            'npwp' => request('npwp'),
+
         ]);
         return redirect()->back()->withSuccess('Data Berhasil di Simpan');
     }
