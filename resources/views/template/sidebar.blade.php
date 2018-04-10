@@ -35,14 +35,14 @@
 
             <li class="treeview ">
                 <a href="">
-                    <i class="fa fa-users"></i> <span>Pelanggan</span>
+                    <i class="fa fa-users"></i> <span>Hotel</span>
                     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                 </a>
                 <ul class="treeview-menu">
                     <li class=""><a href=""><i
-                                    class="fa fa-circle-o"></i>List Pelanggan</a></li>
-                    <li class=""><a href=""><i
-                                    class="fa fa-circle-o"></i>Tambah Pelanggan</a></li>
+                                    class="fa fa-circle-o"></i>List Hotel</a></li>
+                    <li class=""><a href="{{ route('hotel.create')}}"><i
+                                    class="fa fa-circle-o"></i>Tambah Hotel</a></li>
                 </ul>
             </li>
            

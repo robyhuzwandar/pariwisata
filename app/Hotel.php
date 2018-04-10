@@ -13,6 +13,5 @@ class Hotel extends Model
     'phone',
     'fax',
     'email',
-    'npwp'];
-    
+    'npwp'];    
 }

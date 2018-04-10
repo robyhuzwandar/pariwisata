@@ -3,16 +3,16 @@
     <!-- Main content -->
     <div class="box box-success">
         <div class="box-header">
-            <h3 class="box-title">Tambahkan Pelanggan</h3>
+            <h3 class="box-title">Tambahkan Hotel</h3>
         </div>
         <div class="box-body">
             <div class="row">
                 <div class="col-md-6">
                     @include('template.alert')
-                    <form action="{{ route('pelanggan.store') }}" method="post" enctype="multipart/form-data"
+                    <form action="{{ route('hotel.store') }}" method="post" enctype="multipart/form-data"
                           id="contactForm">
                         {{ csrf_field() }}
-                        <div class="form-group {{ $errors->has('nama') ? ' has-error' : '' }}">
+                        <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
                             <label>Name</label>
                             <input value="{{ old('name') }}" type="text" class="form-control" name="name">
                             @if ($errors->has('name'))
@@ -28,44 +28,29 @@
                             @endif
                         </div>
 
-                        <div class="form-group {{ $errors->has('nohp') ? ' has-error' : '' }}">
-                            <label>No HP</label>
-                            <input value="{{ old('nohp') }}" type="number" class="form-control" name="nohp">
-                            @if ($errors->has('nohp'))
-                                <span class="help-block"><strong>{{ $errors->first('nohp') }}</strong></span>
+                        <div class="form-group {{ $errors->has('fax') ? ' has-error' : '' }}">
+                            <label>Fax</label>
+                            <input value="{{ old('fax') }}" type="number" class="form-control" name="fax">
+                            @if ($errors->has('fax'))
+                                <span class="help-block"><strong>{{ $errors->first('fax') }}</strong></span>
                             @endif
                         </div>
 
-                        <div class="form-group  {{ $errors->has('bandwith') ? ' has-error' : '' }}">
-                            <label>Bandwith</label>
-                            <input value="{{ old('bandwith') }}" type="text" class="form-control" name="bandwith">
-                            @if ($errors->has('bandwith'))
-                                <span class="help-block"><strong>{{ $errors->first('bandwith') }}</strong></span>
+                        <div class="form-group  {{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label>Email</label>
+                            <input value="{{ old('email') }}" type="text" class="form-control" name="email">
+                            @if ($errors->has('email'))
+                                <span class="help-block"><strong>{{ $errors->first('email') }}</strong></span>
                             @endif
                         </div>
 
-                        <div class="form-group  {{ $errors->has('jumlahBayar') ? ' has-error' : '' }}">
-                            <label>Jumlah Bayar</label>
-                            <input value="{{ old('jumlahBayar') }}" type="number" class="form-control" name="jumlahBayar">
-                            @if ($errors->has('jumlahBayar'))
-                                <span class="help-block"><strong>{{ $errors->first('jumlahBayar') }}</strong></span>
+                        <div class="form-group  {{ $errors->has('npwp') ? ' has-error' : '' }}">
+                            <label>Npwp</label>
+                            <input value="{{ old('npwp') }}" type="number" class="form-control" name="npwp">
+                            @if ($errors->has('npwp'))
+                                <span class="help-block"><strong>{{ $errors->first('npwp') }}</strong></span>
                             @endif
                         </div>
-
-
-                        <div class="form-group {{ $errors->has('bulan') ? ' has-error' : '' }}">
-                            <label>Pilih Bulan Mulai</label><br>
-                            <select id="basic3" class="show-tick form-control" name="bulan" multiple>
-                                <option disabled="" selected="">Pilih Bulan</option>
-                                @foreach($bulan as $b)
-                                    <option value="{{ $b->id }}">{{ $b->nama }}</option>
-                                @endforeach
-                            </select>
-                            @if ($errors->has('bulan'))
-                                <span class="help-block"><strong>{{ $errors->first('bulan') }}</strong></span>
-                            @endif
-                        </div>
-
                         <button type="submit" class="btn btn-primary btn-flat" name="submit"><span
                                     class="glyphicon glyphicon-send"></span> Simpan
                         </button>
